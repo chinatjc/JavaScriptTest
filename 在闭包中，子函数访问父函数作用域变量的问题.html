@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在闭包中，子函数访问父函数作用域变量的问题</title>
+</head>
+<body>
+
+	<script>
+		
+		function abc(){
+			var a = 1;
+			var b = 2;
+			return function(){
+				console.log("在子函数内访问b变量的结果是："+b);
+			}
+		}
+
+		var c = abc();
+		c();
+
+		//在子函数c函数内，只能访问父函数作用域内的变量b而不能访问变量a
+
+	</script>
+</body>
+</html>
